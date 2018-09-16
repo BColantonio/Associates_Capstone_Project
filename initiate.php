@@ -1,41 +1,53 @@
 <?php
+//Required files and libraries.
+//Spoontacular API implimented with SDK code provided from COMPOSER library manager
+namespace Unirest;
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ .  '/vendor/mashape/unirest-php/src/Unirest/Request.php ';
 
-//require_once ('api.php');
+//SPOONTACULAR API credentials
+$key = '6CN9jXeUKHmshacErW3t06bXAcjnp1FWopIjsn8bxdYPJwQ77d';
+$scheme ='https';
+$host = 'spoonacular-recipe-food-nutrition-v1.p.mashape.com';
 
-/*define('API_ID', '6CN9jXeUKHmshacErW3t06bXAcjnp1FWopIjsn8bxdYPJwQ77d');
-define('API_KEY', 'spoonacular-recipe-food-nutrition-v1.p.mashape.com');*/
-//require_once 'composer.json';
-require_once 'C:/Users/Brian/vendor/autoload.php';
-/*
-Unirest\Request::verifyPeer(false); 
+//Build new spoontacular item query
+$request = new request;
+$request->setMashapeKey($key);
 
-//$rapid = new RapidApiConnect('default-application_5b7a1221e4b0e54f757f1a3c', '460412fd-b284-4104-a927-37ca77010f5e');
+//username & password not provided. authentication possible via host/key combo. 'verifypeer' disabled to avoid error.
+$request->verifyPeer($enabled = false);
 
-$ch = curl_init();
+$headers = array('Accept' => 'application/json');
+$query = 'snickers';
 
-use RapidApi\RapidApiConnect;
-$rapid = new RapidApiConnect('default-application_5b7a1221e4b0e54f757f1a3c', '460412fd-b284-4104-a927-37ca77010f5e');
-$rapid->call('NasaAPI', 'getPictureOfTheDay', []);
 
-/*$result = $rapid->call('APIName', 'FunctionName', [ 
-  "ParameterKey1" => "ParameterValue1"
-  "ParameterKey2" => "ParameterValue2"
-
-  $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/products/search?query=snickers&offset=0&number=10&maxCalories=5000&minProtein=0&maxProtein=100&minFat=0&maxFat=100&minCarbs=0&maxCarbs=100&minCalories=0",
+$response = Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/products/search?query=" . $query,
   array(
-    "X-Mashape-Key" => "6CN9jXeUKHmshacErW3t06bXAcjnp1FWopIjsn8bxdYPJwQ77d",
-    "X-Mashape-Host" => "spoonacular-recipe-food-nutrition-v1.p.mashape.com"
+    "X-Mashape-Key" => $key,
+    "X-Mashape-Host" => $host
   )
 );
-
-
 
 ?>
 <header></header>
 <html>
 <body>
-<img src= "<?php print($response);?>"></img>
+<th>
+	<td>
+		<?php 
+		var_dump($response);
+		foreach ($response as $respond) : ?>
+			<div class="col-12 col-4">
+				<div class = "card">
+					<h2 class = "h3 mb-0">
+						<?php
+						echo 'hey right here!!!';
+						echo $respond->'title'; 
+						var_dump($respond)?>
+					</h2>
+					
+					<?php endforeach ?>
+	</td>
+</th>
 </body>
 </html>
-<?php //require_once ('api.php');
-?>*/

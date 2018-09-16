@@ -1,11 +1,6 @@
 {
-    "require": {
-        "monolog/monolog": "1.0.*"
-    }
-}
-
-{
     "require-dev": {
-        "mashape/unirest-php": "3.*"
+        "mashape/unirest-php": "^3.0",
+        "rapidapi/rapidapi-connect": "^0.0.2"
     }
 }
