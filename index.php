@@ -17,9 +17,7 @@
     </head>
 	<?php
 		//needed for spoontacular api connection/communication
-		namespace Unirest;
-		require __DIR__ . '/vendor/autoload.php';
-		require __DIR__ .  '/vendor/mashape/unirest-php/src/Unirest/Request.php ';
+		require_once 'dbconn.php';
 		//Database connectivity
 		//require_once 'assets/dbconn.php';
 		//$db = getDB();
@@ -28,7 +26,12 @@
 		$action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING) ?? filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING) ?? NULL;
 		$email = filter_input(INPUT_GET, 'email', FILTER_SANITIZE_STRING) ?? filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING) ?? NULL;
 		$pwd = filter_input(INPUT_GET, 'pwd', FILTER_SANITIZE_STRING) ?? filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING) ?? NULL;
+		$query = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_STRING) ?? filter_input(INPUT_POST, 'search', FILTER_SANITIZE_STRING) ?? NULL;
 		include 'header.php';
+			if (isset($action)) {
+				include 'router.php';
+				
+			}
     ?>
 	<body>
 	<div class="jumbotron text-center">

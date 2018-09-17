@@ -1,7 +1,3 @@
-<?php
-$email = $_POST["email"];
-$pwd = $_POST["pwd"];
-?>
 <div class="container-fluid">	
 	<form action="index.php" method="post" class="form-inline">
 		<div class="form-group">
@@ -13,7 +9,7 @@ $pwd = $_POST["pwd"];
 			<input type="password" class="form-control" id="pwd" name="pwd">
 		</div>
 		<div class="input-group-btn">
-			<button type="button" input type="submit" class="btn primary btn-lg btn-block">Join Us!</button>
+			<button type="button" input type="submit" class="btn primary btn-lg btn-block" name="action" value="join">Join Us!</button>
 		</div>
 	</form>
 </div>
