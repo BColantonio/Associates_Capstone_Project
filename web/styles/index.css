@@ -1,0 +1,9 @@
+body{
+	font-family: 'Montserrat', sans-serif;
+}
+
+.jumbotron{
+		background-image: url("http://www.freehdimages.in/uploads/large/desktop-hd-small-pictures-of-fruits-and-vegetables.jpg");
+		background-color: #ffff;
+		color: #ffff;
+	}

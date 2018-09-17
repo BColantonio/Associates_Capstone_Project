@@ -34,19 +34,11 @@ $response = Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape
 <body>
 <th>
 	<td>
-		<?php 
-		var_dump($response);
-		foreach ($response as $respond) : ?>
-			<div class="col-12 col-4">
-				<div class = "card">
-					<h2 class = "h3 mb-0">
-						<?php
-						echo 'hey right here!!!';
-						echo $respond->'title'; 
-						var_dump($respond)?>
-					</h2>
-					
-					<?php endforeach ?>
+		<script type="text/javascript">
+			
+			
+		</script>
+							
 	</td>
 </th>
 </body>
