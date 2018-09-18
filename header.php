@@ -4,3 +4,6 @@
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="action" value="search">Search</button>
   </form>
 </nav>
+<div class="jumbotron text-center">
+		<h1>SmartCart</h1>
+</div>

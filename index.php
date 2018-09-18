@@ -1,3 +1,13 @@
+<?php
+//Required files and libraries.
+//Spoontacular API implimented with SDK code provided from COMPOSER library manager
+namespace Unirest;
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ .  '/vendor/mashape/unirest-php/src/Unirest/Request.php ';
+$key = '6CN9jXeUKHmshacErW3t06bXAcjnp1FWopIjsn8bxdYPJwQ77d';
+$scheme ='https';
+$host = 'spoonacular-recipe-food-nutrition-v1.p.mashape.com';
+?>
 <html xmlns="http://www.w3.org/1999/html">
     <meta charset="utf-8">
     <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0">
@@ -15,32 +25,33 @@
         <!--<script src='web/js/init.js'></script>-->
 		<link rel="stylesheet" href="web/styles/index.css">
     </head>
-	<?php
-		//needed for spoontacular api connection/communication
-		require_once 'dbconn.php';
-		//Database connectivity
-		//require_once 'assets/dbconn.php';
-		//$db = getDB();
-		
-		// get the data from user, if any
-		$action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING) ?? filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING) ?? NULL;
-		$email = filter_input(INPUT_GET, 'email', FILTER_SANITIZE_STRING) ?? filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING) ?? NULL;
-		$pwd = filter_input(INPUT_GET, 'pwd', FILTER_SANITIZE_STRING) ?? filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING) ?? NULL;
-		$query = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_STRING) ?? filter_input(INPUT_POST, 'search', FILTER_SANITIZE_STRING) ?? NULL;
-		include 'header.php';
-			if (isset($action)) {
-				include 'router.php';
-				
-			}
+	<?php		
+	// get the data from user, if any
+	$action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING) ?? filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING) ?? NULL;
+	$email = filter_input(INPUT_GET, 'email', FILTER_SANITIZE_STRING) ?? filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING) ?? NULL;
+	$pwd = filter_input(INPUT_GET, 'pwd', FILTER_SANITIZE_STRING) ?? filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING) ?? NULL;
+	$query = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_STRING) ?? filter_input(INPUT_POST, 'search', FILTER_SANITIZE_STRING) ?? NULL;
+	include 'header.php';
+	include 'router.php';
     ?>
-	<body>
-	<div class="jumbotron text-center">
-		<h1>SmartCart</h1>
-	</div>
-	<div id="response"></div>
-		<footer>
-		  <p>Footer</p>
-		</footer>
-	</div>
-</body>
+	<body onload="displaySearchResults()">
+		<div id="response">
+			<p hidden id="phpReturn"><?php print_r($response); ?></p>
+			<p id="javascriptReturn"></p>
+		</div>
+		<script>
+		function displaySearchResults() {
+			var object = document.getElementById("phpReturn").innerHTML;
+			var obj = object;
+			document.getElementById("javascriptReturn").innerHTML = obj;
+			console.log(typeof obj);
+			$.parseJSON(obj);
+			console.log(typeof obj);
+		}
+		
+		</script>
+	<footer>
+	  <p>Footer</p>
+	</footer>	
+	</body>
 </html>
