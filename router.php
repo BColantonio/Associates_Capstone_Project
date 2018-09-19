@@ -30,9 +30,9 @@ switch($method){
 	
 
 	//if POST email isn't set, display join-us content/initial load screen.
-	//else if (is_null($action) && is_null($email)) {
-		//require_once 'joinForm.php';
-	//}
+	if (is_null($action) && is_null($email)) {
+		require_once 'joinForm.php';
+	}
 	//use javascript to dynamically display results
 	?>
 	
