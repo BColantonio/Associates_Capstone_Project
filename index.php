@@ -1,9 +1,7 @@
 <?php
 //Required files and libraries.
 //Spoontacular API implimented with SDK code provided from COMPOSER library manager
-namespace Unirest;
 require __DIR__ . '/vendor/autoload.php';
-require __DIR__ .  '/vendor/mashape/unirest-php/src/Unirest/Request.php ';
 $key = '6CN9jXeUKHmshacErW3t06bXAcjnp1FWopIjsn8bxdYPJwQ77d';
 $scheme ='https';
 $host = 'spoonacular-recipe-food-nutrition-v1.p.mashape.com';
@@ -22,7 +20,7 @@ $host = 'spoonacular-recipe-food-nutrition-v1.p.mashape.com';
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <!--<script src='web/js/init.js'></script>-->
+		<script src='web/js/init.js'></script>
 		<link rel="stylesheet" href="web/styles/index.css">
     </head>
 	<?php		
@@ -34,22 +32,7 @@ $host = 'spoonacular-recipe-food-nutrition-v1.p.mashape.com';
 	include 'header.php';
 	include 'router.php';
     ?>
-	<body onload="displaySearchResults()">
-		<div id="response">
-			<p hidden id="phpReturn"><?php print_r($response); ?></p>
-			<p id="javascriptReturn"></p>
-		</div>
-		<script>
-		function displaySearchResults() {
-			var object = document.getElementById("phpReturn").innerHTML;
-			var obj = object;
-			document.getElementById("javascriptReturn").innerHTML = obj;
-			console.log(typeof obj);
-			$.parseJSON(obj);
-			console.log(typeof obj);
-		}
-		
-		</script>
+	<body>
 	<footer>
 	  <p>Footer</p>
 	</footer>	

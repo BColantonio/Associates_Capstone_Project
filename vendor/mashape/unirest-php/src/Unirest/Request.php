@@ -13,7 +13,6 @@ class Request
     private static $socketTimeout = null;
     private static $verifyPeer = true;
     private static $verifyHost = true;
-
     private static $auth = array (
         'user' => '',
         'pass' => '',

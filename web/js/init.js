@@ -1,5 +1,7 @@
-function init() {
-	$.get({ url: 'Request.php',
-		data: {method: }
-	
+function getFood() {
+	console.log("HERER");
+	console.log($('#search').val());
+	$.get({ url: 'Router.php',
+		data: {method: "search"}
+	});	
 }
