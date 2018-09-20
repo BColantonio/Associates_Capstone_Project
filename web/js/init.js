@@ -4,6 +4,7 @@ function getFood() {
 		data: {method: "search", request: searchValue},
 		success: function(output) {
 		var arrayOutput = JSON.parse(output);
+		console.log(arrayOutput);
 		 arrayOutput.forEach(function(output) {
 			$.get({ url: 'Router.php',
 			data: {method: "ingredients", request: output.id},
@@ -19,7 +20,7 @@ function getFood() {
 					}}
 				$("#products").append('<h2>' + productOutput.title + ' ' + vegVerified + '</h2>');					
 				$("#products").append('<ul>');
-				$("#products").append('<li><h3>Ingredients:</h3></li>');
+				$("#products").append('<li><h3><a>Ingredients:</a></h3></li>');
 				productOutput.ingredients.forEach(function(ingredient) {
 					$('#products').append('<li>'+ ingredient.name + '</li>');
 				});
@@ -36,7 +37,6 @@ function getFood() {
 		}
 	});	
 }
-
 
 
 

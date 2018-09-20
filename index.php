@@ -14,7 +14,8 @@ $host = 'spoonacular-recipe-food-nutrition-v1.p.mashape.com';
     <title>SmartCart</title>
 
     <meta http-equiv="Content-Language" content="en">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
     <head>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -33,8 +34,8 @@ $host = 'spoonacular-recipe-food-nutrition-v1.p.mashape.com';
 	include 'router.php';
     ?>
 	<body>
-	<footer>
-	  <p>Footer</p>
+	<footer class="page-footer font-small">
+		<div class="footer-copyright text-center py-3">Copyright &copy; 2018 Brian Colantonio. All Rights Reserved</div>
 	</footer>	
 	</body>
 </html>

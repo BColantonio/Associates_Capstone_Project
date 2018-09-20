@@ -28,9 +28,9 @@ switch($method){
 		break;
 	};
 	
-
+ 
 	//if POST email isn't set, display join-us content/initial load screen.
-	if (is_null($action) && is_null($email)) {
+	if (is_null($method) && is_null($params)) {
 		require_once 'joinForm.php';
 	}
 	//use javascript to dynamically display results

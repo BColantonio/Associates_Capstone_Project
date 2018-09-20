@@ -1,10 +1,13 @@
+.background{
+	background-image: url("/tomatoes.jpg");
+}
+
 body{
 	font-family: 'Montserrat', sans-serif;
 }
 
-.jumbotron{
-		background-image: url("http://www.freehdimages.in/uploads/large/desktop-hd-small-pictures-of-fruits-and-vegetables.jpg");
+.jumbotron text-center{
+		background-image: url("tomatoes.jpg");
 		background-color: #ffff;
 		color: #ffff;
 	}
-	
